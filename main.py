@@ -2,14 +2,13 @@ import os
 import random
 import math
 import pygame
-import os import listdir
+# import os import listdir
 from os.path import isfile, join
 
 pygame.init()
 
 pygame.display.set_caption("Platformer")
 
-BG_COLOR = (255,255,255)
 WIDTH, HEIGHT = 1000, 800
 FPS = 60
 # Speed of the player
@@ -29,8 +28,17 @@ def get_background(name):
 
     return tiles, image
 
+
+def draw(window, background, bg_image):
+    for tile in background:
+        window.blit(bg_image, tile)
+
+    pygame.display.update()
+
+
 def main(window):
     clock = pygame.time.Clock()
+    background, bg_image = get_background("Gray.png")
 
     run = True
     while run:
@@ -41,8 +49,11 @@ def main(window):
                 run = False
                 break
 
+        draw(window, background, bg_image)
+
     pygame.quit()
     quit()
+
 
 if __name__ == "__main__":
     main(window)
