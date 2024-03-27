@@ -2,13 +2,13 @@ import os
 import random
 import math
 import pygame
-# import os import listdir
+from os import listdir
 from os.path import isfile, join
 
 pygame.init()
 
+# Screen and game configuration
 pygame.display.set_caption("Platformer")
-
 WIDTH, HEIGHT = 1000, 800
 FPS = 60
 # Speed of the player
