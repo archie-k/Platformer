@@ -27,6 +27,12 @@ class Player(pygame.sprite.Sprite):
     def move(self, dx, dy):
         self.rect.x += dx
         self.rect.y += dy
+        
+    def move_left(self, vel):
+        self.x.vel = -vel
+        
+    def move_right(self, vel):
+        self.x.vel = vel
 
 
 def get_background(name):
