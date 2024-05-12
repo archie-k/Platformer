@@ -23,6 +23,8 @@ class Player(pygame.sprite.Sprite):
         self.rect = pygame.Rect(x, y, width, height)
         self.x.vel = 0
         self.y.vel = 0
+        self.direction = "left"
+        self.animation_count = 0
         
     def move(self, dx, dy):
         self.rect.x += dx
@@ -30,9 +32,15 @@ class Player(pygame.sprite.Sprite):
         
     def move_left(self, vel):
         self.x.vel = -vel
+        if self.direction != "left":
+            self.direction = "left"
+            self.animation_count = 0
         
     def move_right(self, vel):
         self.x.vel = vel
+        if self.direction != "right":
+            self.direction = "right"
+            self.animation_count = 0
 
 
 def get_background(name):
