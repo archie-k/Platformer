@@ -42,7 +42,7 @@ class Player(pygame.sprite.Sprite):
             self.direction = "right"
             self.animation_count = 0
 
-
+# Uploading game background
 def get_background(name):
     image = pygame.image.load(join("assets", "Background", name))
     _, _, width, height = image.get_rect()
